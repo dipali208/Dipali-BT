@@ -1,0 +1,19 @@
+<!-- <a routerLink="stonepaper">Stone Paper Scissor</a>
+<a routerLink="jumpingbox">Jumping Box</a>
+<a routerLink="profile">Aur Kuch bhi</a>
+
+ -->
+ <p>show-games works!</p>
+ <nav class="navbar navbar-default">
+     <div class="container-fluid">
+ 
+         <ul class="nav navbar-nav">
+ 
+             <li *ngFor="let i of gameName;" value="{{i.gameName}}">
+ 
+                 <a (click)="routeTogame(i.gameId)">
+                     {{ i.gameName}}</a></li>
+ 
+         </ul>
+     </div>
+ </nav>

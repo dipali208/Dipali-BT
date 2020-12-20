@@ -1,0 +1,20 @@
+mat-card{
+    width: 50%;
+    height: 50%;
+    background: linear-gradient(45deg, #f09a7f, #e08eae, #84c4db, #70ccb6);
+}
+.shape{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+.aligntoright{
+    float: right;
+    width: 70%;
+    height: 70%;
+}
+
+.example-header-image {
+    background-image: url('https://cdn1.iconfinder.com/data/icons/technology-devices-2/100/Profile-512.png');
+    background-size: cover;
+  }

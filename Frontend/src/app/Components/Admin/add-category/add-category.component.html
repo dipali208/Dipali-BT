@@ -1,0 +1,23 @@
+<h1 class="text-center">Add New Article</h1>
+<div class="container">
+    <form class="text-center" (submit)= "fileUploadHandler($event)" ngNativeValidate>
+      <div class="form-group row justify-content-center">
+        <label class="col-md-2">Image</label>
+        <input class="col-md-6" type="file" style="padding: 10px; width: 96%" (change)="fileUpload($event)" required/>
+      </div>
+     
+      <div class="form-group row justify-content-center">
+        <label class="col-md-2">Category Name</label>
+        <input class="col-md-6" type="text" [(ngModel)]='category.categoryName' 
+        name="categoryName" id="categoryName" placeholder="Category Name" required>
+      </div>
+      <div class="form-group row justify-content-center">
+        <label class="col-md-2">Description</label>
+         <textarea class="col-md-6" placeholder="Description of category" [(ngModel)]='category.description' name="description" rows="5" required></textarea>
+        
+      </div>
+      <button type="submit" class="btn btn-primary">Add Category</button>
+  </form>
+
+  
+</div>

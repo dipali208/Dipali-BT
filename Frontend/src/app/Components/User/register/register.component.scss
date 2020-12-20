@@ -1,0 +1,51 @@
+// \.example-card {
+//     max-width: 400px;
+//   }
+  
+//   .example-header-image {
+//     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+//     background-size: cover;
+//   }
+//   .center-content{
+//       text-align: center;
+//   }
+.center-content{
+    top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  .buttons{
+      width:100%;
+  }
+  .signUpField{
+      display: flex;
+      flex-direction: row;
+  }
+  .title{
+      text-align: center;
+  }
+  .container{
+      padding: 2%;
+  }
+
+  .ng-valid[required], .ng-valid.required{
+    border-left: 2px solid green;
+}
+
+// .ng-invalid:not(form){
+//     border: 2px solid red;
+// }
+
+.dis{
+    display: flex;
+    flex-direction: row;
+}

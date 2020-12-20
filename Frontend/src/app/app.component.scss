@@ -1,0 +1,10 @@
+.col-md-6{
+    height:100%;
+    width:100%;
+}
+.changingDiv{
+    min-height: 500px;
+}
+router-outlet{
+    min-height: 40%;
+}

@@ -1,0 +1,26 @@
+<div class="row m-0 add">
+    <div class="col-md-6">
+        <!-- <mat-icon>link</mat-icon> -->
+    </div>
+    <div class="col-md-6">
+       <P >How was Your experiance ?</P>
+        <div class="row">
+            <div class="col-md-4">
+                <span (click)="bad()"><mat-icon>sentiment_very_dissatisfied</mat-icon></span><br>
+                <p>Bad</p>
+            </div>
+            <div class="col-md-4">
+                <span (click)="moderate()"><mat-icon >sentiment_satisfied</mat-icon></span><br>
+                <p>Good</p>
+            </div>
+            <div class="col-md-4">
+                <span  (click)="good()"><mat-icon>mood</mat-icon></span><br>
+                <p>Too much good</p>
+            </div>
+        </div>
+        <div class="row toright">
+            <span (click)="goup()"><mat-icon>keyboard_arrow_up</mat-icon></span>
+        </div>
+    </div>
+</div>
+

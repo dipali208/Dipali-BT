@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col-sm-10">
+    <h1 mat-dialog-title>Welcome to BestifyYourTime</h1>
+
+  </div>
+  <div class="col-sm-2">
+    <i class="fa fa-times-circle mt-2" aria-hidden="true" [mat-dialog-close]="true"></i>
+  </div>
+</div>
+
+
+<div mat-dialog-content>
+  <div class="center-content container">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title class="title"></mat-card-title>
+            <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+        </mat-card-header>
+        <mat-card-content>
+            <mat-tab-group>
+                <mat-tab label="Login">
+                      <form class="example-form" #loginForm="ngForm" >
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Email</mat-label>
+                          <input type="email" matInput [(ngModel)]="logEmail" name="signUpEmail"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #name="ngModel">
+                          <div *ngIf="name.errors && (name.invalid || name.touched) && (!name.pristine)">
+                            <small class="text-danger" *ngIf="name.errors.required">Primary email is required</small>
+                            <small class="text-danger" *ngIf="name.errors.pattern">Please provide a valid email address</small>
+                        </div>
+                        </mat-form-field>
+                      
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Password</mat-label>
+                          <input type="password" matInput [(ngModel)]="logPassword" name="signUpPassword1" required #password="ngModel">
+                          <div *ngIf="password.errors && (password.invalid || password.touched) && (!password.pristine)">
+                            <small class="text-danger" *ngIf="password.errors.required">Password is required</small>
+                        </div>
+                        </mat-form-field>
+ 
+                        <button class="buttons"  [disabled]="!loginForm.form.valid"  mat-raised-button color="primary" [mat-dialog-close]="true" (click)="login()">Login</button>  
+                      </form>
+                    
+                </mat-tab>
+                <mat-tab label="Sign Up">
+                    <form class="example-form" #signUpForm="ngForm" (ngSubmit)="signup()">
+                        <mat-form-field class="example-full-width">
+                          <mat-label>User name</mat-label>
+                          <input type="text" matInput minlength="4" [(ngModel)]="usr.signUpName" name="signUpName"  required #name1="ngModel">
+                          <div *ngIf="name1.errors && (name1.invalid || name1.touched) && (!name1.pristine)">
+                            <small class="text-danger" *ngIf="name1.errors.required">Username is required</small>   
+                            <small class="text-danger" *ngIf="name1.errors.minlength">Username must have atleast 4 characters</small>
+                        </div>
+                        </mat-form-field>
+                      
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Email</mat-label>
+                          <input type="email" matInput required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="usr.signUpEmail" name="signUpEmail"   #name2="ngModel">
+                          <!-- <div  [hidden]="name2.valid || name2.pristine" class="alert"></div> -->
+                            <div *ngIf="name2.errors && (name2.invalid || name2.touched) && (!name2.pristine)">
+                              <small class="text-danger" *ngIf="name2.errors.required">Primary email is required</small>
+                              <small class="text-danger" *ngIf="name2.errors.pattern">Please provide a valid email address</small>
+                          </div>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput required [(ngModel)]="usr.signUpPassword1" name="signUpPassword1"   #name3="ngModel">
+                            <div *ngIf="name3.errors && (name3.invalid || name3.touched) && (!name3.pristine)">
+                              <small class="text-danger" *ngIf="name3.errors.required">Password is required</small>
+                          </div>
+                          </mat-form-field>
+                        
+                          <mat-form-field class="example-full-width">
+                            <mat-label>Confirm password</mat-label>
+                            <input type="password" matInput [(ngModel)]="usr.signUpPassword2" name="signUpPassword2"  required #name4="ngModel">
+                            <div *ngIf="name4.errors && (name4.invalid || name4.touched) && (!name4.pristine)">
+                              <small class="text-danger" *ngIf="name4.errors.required">Password is required</small>
+                          </div>
+                          </mat-form-field>
+                    <button class="buttons" type="submit" [disabled]="!signUpForm.form.valid" mat-raised-button color="primary" [mat-dialog-close]="true">Sign Up</button>
+                    </form>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+    </mat-card>
+
+</div>
+
+</div>
+
+
+
+
+
+

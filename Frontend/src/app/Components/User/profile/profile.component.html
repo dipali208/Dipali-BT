@@ -1,0 +1,60 @@
+<div class="shape">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{userDetails[0].name}}</mat-card-title>
+      <mat-card-subtitle>{{userDetails[0].email}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-accordion>
+
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <strong>Personal Details : </strong>
+                </mat-panel-title>
+                <mat-panel-description>
+
+                  <!-- //add mat user icon -->
+                </mat-panel-description>
+              </mat-expansion-panel-header>   
+                Name : {{userDetails[0].name}}<br>
+                Email : {{userDetails[0].name}}<br>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel mt-5 (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <strong>Favourite List : </strong>
+                </mat-panel-title>
+                <mat-panel-description>
+
+                  <!-- //add mat user icon -->
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-nav-list>
+                <div class="row" *ngFor="let fav of favList">
+                  <div class="col-md-10">
+                    <a mat-list-item href="..." > {{ fav.quizName }} </a>
+                  </div>
+                  <div class="col-md-2">
+                    <mat-icon id="fav.favouriteId" (click)="removeFromList(fav.favouriteId)">delete</mat-icon>
+                  </div>
+                  
+                </div>
+             
+              
+              </mat-nav-list>
+            </mat-expansion-panel>
+
+          </mat-accordion>
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button> -->
+    </mat-card-actions>
+  </mat-card>
+</div>
+

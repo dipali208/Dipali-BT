@@ -1,0 +1,110 @@
+<div class="container">
+<form>
+  <countdown #cd1 [config]="{ leftTime:this.timer }"></countdown>
+  <div *ngFor="let i of QuestionList; let ind = index">
+    <div class="question col-md-8">
+      <h1>
+          <span>{{ i.question }}</span>
+      </h1>
+    </div>
+    
+
+    <div *ngIf="i.typeId == '1'">
+      
+      <div class="form-check">
+        <label class="form-check-label" for="radio1">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="{{ i.questionId }}"
+            id="{{ i.option1 }}"
+            (click)="question(i.questionId, i.option1, ind)"
+            [checked]="i.option1 == i.selectedOption"
+            [disabled]="i.found"
+          />{{ i.option1 }}
+        </label>
+      </div>
+
+      <div class="form-check">
+        <label class="form-check-label" for="radio2">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="{{ i.questionId }}"
+            id="{{ i.option2 }}"
+            [disabled]="i.found"
+            (click)="question(i.questionId, i.option2, ind)"
+            [checked]="i.option2 == i.selectedOption"
+          />{{ i.option2 }}
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label" for="radio3">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="{{ i.questionId }}"
+            id="{{ i.option3 }}"
+            [disabled]="i.found"
+            (click)="question(i.questionId, i.option3, ind)"
+            [checked]="i.option3 == i.selectedOption"
+          />{{ i.option3 }}
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label" for="radio4">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="{{ i.questionId }}"
+            id="{{ i.option4 }}"
+            [disabled]="i.found"
+            (click)="question(i.questionId, i.option4, ind)"
+            [checked]="i.option4 == i.selectedOption"
+          />{{ i.option4 }}
+        </label>
+      </div>
+    </div>
+    <p><strong>Your Answer : </strong> {{ i.selectedOption }}</p> 
+     <p><strong>Correct Answer : </strong>  {{ i.CorrectOption }}</p>
+
+    <div *ngIf="i.typeId == '2'">
+      <div class="form-check">
+        <label class="form-check-label" for="radio1">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="{{ i.questionId }}"
+            id="{{ i.option1 }}"
+            (click)="question(i.questionId, i.option1, ind)"
+            [checked]="i.option1 == i.selectedOption"
+            [disabled]="i.found"
+          />{{ i.option1 }}
+        </label>
+      </div>
+
+      <div class="form-check">
+        <label class="form-check-label" for="radio2">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="{{ i.questionId }}"
+            id="{{ i.option2 }}"
+            [disabled]="i.found"
+            (click)="question(i.questionId, i.option2, ind)"
+            [checked]="i.option2 == i.selectedOption"
+          />{{ i.option2 }}
+        </label>
+      </div>
+    </div>
+
+    <div *ngIf="i.typeId == '3'">
+      <input type="text" name="option" />
+    </div>
+  </div>
+  <button type="submit" class="btn btn-info" (click)="onSubmit()">
+    Submit
+  </button>
+</form>
+</div>
+
